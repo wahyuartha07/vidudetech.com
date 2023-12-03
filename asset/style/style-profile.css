@@ -1,0 +1,231 @@
+:root {
+    --Primary: #213555;
+    --secondary: #DCCA81;
+    --Bt: #4F709C;
+    --Nav: #f2e8e8;
+    --Bg: #ffffff;
+    --Bl: #000000;
+    --foot: #8C8C8C;
+}
+
+*,
+html {
+    transition: all 0.5s ease;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+}
+
+body {
+    background-color: var(--Bg);
+}
+
+/* Navbar start */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10%;
+    background-color: rgb(33, 53, 85);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.icon {
+    color: var(--Bg);
+    margin-left: -40rem;
+    font-size: 26px;
+    width: 100%;
+}
+
+.icon:hover {
+    color: var(--Bt);
+}
+
+.masuk {
+    line-height: 2;
+    padding: 0.2rem 2rem;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin-left: -27rem;
+    color: var(--Bg);
+    background-color: var(--Bt);
+    border: none;
+    border-radius: 3px;
+    font-weight: 400;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.masuk:hover {
+    background-color: var(--Bg);
+    color: var(--Bt);
+}
+
+.navbar .navbar-logo img {
+    width: 150px;
+    margin-left: -5rem;
+}
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    background-color: var(--Primary);
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--Bg);
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: var(--Bt);
+}
+
+.sidenav .a-nav a::before {
+    content: "";
+    position: absolute;
+    bottom: -0.3rem;
+    left: 0;
+    width: 100%;
+    height: 0.1rem;
+    background-color: var(--Bt);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s ease;
+}
+
+.sidenav .a-nav a:hover::before {
+    transform: scaleX(1);
+}
+
+.sidenav .a-nav a:hover {
+    color: var(--foot);
+}
+
+.sidenav .a-nav a:hover::after {
+    transform: scaleX(0.5);
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+/* Navbar end */
+
+/* Homepage Start */
+.about {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    height: 100vh;
+    justify-content: space-between;
+}
+
+.isi-1 {
+    width: 50%;
+    display: flex;
+}
+
+.isi-1 img {
+    width: 100%;
+    /* margin-left: 10rem; */
+}
+
+.isi-2 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.isi-2 h2 {
+    font-size: 34px;
+    width: 100%;
+    font-weight: 600;
+    /* text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.6); */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.isi-2 h1 {
+    font-size: 22px;
+    width: 80%;
+    font-weight: 400;
+    /* text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.6); */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.daftar {
+    width: 200px;
+    line-height: 2;
+    padding: 0.2rem 2rem;
+    margin-top: 2rem;
+    color: var(--Bg);
+    background-color: var(--Bt);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-family: "poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.daftar:hover {
+    background-color: var(--Primary);
+    color: var(--Bg);
+}
+
+/* Homepage End */

@@ -1,0 +1,422 @@
+:root {
+  --Primary: #213555;
+  --secondary: #DCCA81;
+  --Bt: #4F709C;
+  --Nav: #f2e8e8;
+  --Bg: #ffffff;
+  --Bl: #000000;
+  --foot: #8C8C8C;
+}
+
+*,
+html {
+  transition: all 0.5s ease;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--Bg);
+}
+
+/* Navbar start */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10%;
+  background-color: rgb(33, 53, 85);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+/* Styles untuk search bar */
+.search-container {
+  display: flex;
+  margin: 10px;
+}
+
+#search-bar {
+  padding: 0.5rem;
+  width: 70%;
+  border-radius: 5px;
+  background-color: rgb(247, 248, 250);
+  text-decoration: none;
+
+
+}
+
+#search-button {
+  padding: 0.2rem 2rem;
+  margin-left: 0.2rem;
+  border-radius: 3px;
+  color: var(--Bg);
+  background-color: var(--Bt);
+  border: none;
+  cursor: pointer;
+}
+
+#search-button:hover {
+  background-color: var(--Bg);
+  color: var(--Bt);
+}
+
+.masuk {
+  line-height: 2;
+  padding: 0.2rem 2rem;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin-left: -17rem;
+  color: var(--Bg);
+  background-color: var(--Bt);
+  border: none;
+  border-radius: 3px;
+  font-weight: 400;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.masuk:hover {
+  background-color: var(--Bg);
+  color: var(--Bt);
+}
+
+.navbar .navbar-logo img {
+  width: 150px;
+  margin-left: 1rem;
+}
+
+.navbar .navbar-nav a,
+.navbar .navbar-nav p {
+  color: var(--Bg);
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+  text-decoration: none;
+  right: -1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+}
+
+.navbar .navbar-nav a::before {
+  content: "";
+  position: absolute;
+  bottom: -0.3rem;
+  left: 0;
+  width: 100%;
+  height: 0.1rem;
+  background-color: var(--foot);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s ease;
+}
+
+.navbar .navbar-nav a:hover::before {
+  transform: scaleX(1);
+}
+
+.navbar-nav {
+  margin-right: 9.5rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--foot);
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-ekstra a {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-ekstra a:hover {
+  color: var(--Bl);
+}
+
+/* Navbar end */
+
+
+/* Homepage Start */
+.about {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  height: 100vh;
+  justify-content: space-between;
+}
+
+.isi-1 {
+  width: 50%;
+  display: flex;
+}
+
+.isi-1 img {
+  width: 100%;
+  /* margin-left: 10rem; */
+}
+
+.isi-2 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.isi-2 h2 {
+  font-size: 34px;
+  width: 100%;
+  font-weight: 600;
+  /* text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.6); */
+  font-family: Arial, Helvetica, sans-serif;
+}
+hr{
+  width: 78%;
+  border: 1px solid var(--Primary);
+}
+
+.isi-2 h1 {
+  font-size: 22px;
+  width: 80%;
+  font-weight: 400;
+  /* text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.6); */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.daftar {
+  width: 200px;
+  line-height: 2;
+  padding: 0.2rem 2rem;
+  margin-top: 2rem;
+  color: var(--Bg);
+  background-color: var(--Bt);
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-family: "poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.daftar:hover {
+  background-color: var(--Primary);
+  color: var(--Bg);
+}
+
+/* Homepage End */
+
+
+/* about start */
+.container-about {
+  padding-top: 7rem;
+  width: 100%;
+  display: flex;
+  height: 50vh;
+  justify-content: center;
+}
+
+.container2 {
+  display: flex;
+  background-color: #ddd4d4;
+  border-radius: 10px;
+  height: 30vh;
+  width: 70%;
+  flex-direction: column;
+}
+
+.container2 .about-isi-1 {
+  padding-top: 3rem;
+  padding-left: 30rem;
+}
+
+.about-isi-1 h2 {
+  font-family: "poppins", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--Bt);
+}
+
+.container2 .about-isi-2 {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 10rem;
+  /* justify-content: space-evenly; */
+}
+
+.about-isi-2 .bab {
+  width: 200px;
+  line-height: 2;
+  padding: 0.2rem 2rem;
+  margin-top: 2rem;
+  color: var(--Bg);
+  background-color: var(--Bt);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: "poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.bab:hover {
+  background-color: var(--Primary);
+  color: var(--Bg);
+}
+
+/* about end */
+
+/* keunggulan start */
+.container-keunggulan {
+  padding-top: 1rem;
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.keunggulan-container {
+  height: 75vh;
+  border-radius: 10px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--Bt);
+  padding-top: 5rem;
+}
+
+.keunggulan-container h2 {
+  margin: 16px 0 48px;
+  text-align: center;
+  font-size: 32px;
+  color: var(--Bg);
+  font-family: "poppins", sans-serif;
+}
+
+.keunggulan-container .isi-unggul {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.1rem;
+  gap: 0.1rem;
+}
+
+.border p {
+  margin-top: 40px;
+  font-size: 22px;
+  text-align: center;
+  font-family: "poppins", sans-serif;
+  color: var(--Bg);
+  font-weight: 700;
+}
+
+
+.keunggulan-container .isi-unggul .foto-1 {
+  margin-left: 4rem;
+  width: 75%;
+  /* Ubah persentase sesuai kebutuhan */
+  height: auto;
+}
+
+.keunggulan-container .isi-unggul .foto-2 {
+  margin-left: 4rem;
+  width: 75%;
+  height: auto;
+}
+
+.keunggulan-container .isi-unggul .foto-3 {
+  margin-left: 4rem;
+  width: 75%;
+  height: auto;
+}
+
+
+/* keunggulan end */
+
+/* footer start */
+.footer-container {
+  padding-top: 10rem;
+  height: 40vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--Primary);
+  padding-top: 3rem;
+}
+
+.footer-container .bio h2 {
+  margin: 16px 0 48px;
+  text-align: center;
+  font-size: 32px;
+  color: var(--Bg);
+  font-family: "poppins", sans-serif;
+}
+
+.footer-container p {
+  margin-top: -2rem;
+  padding: 1rem 7%;
+  max-width: 48rem;
+  font-size: 18px;
+  text-align: center;
+  color: var(--Bg);
+}
+
+.footer-container .sosmed {
+  display: flex;
+  flex-direction: row;
+  margin-top: 3rem;
+  gap: 1rem;
+}
+
+.footer-container .sosmed img {
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-container .sosmed img:hover {
+  transform: scale(1.3);
+}
+
+/* footer end */
+
+
+/* responsif */
+@media screen and (max-width: 768px) {
+  /* Atur tampilan untuk perangkat dengan lebar layar <= 768px */
+}
+
+@media screen and (max-width: 480px) {
+  /* Atur tampilan untuk perangkat dengan lebar layar <= 480px */
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-nav {
+    display: none;
+  }
+
+  .navbar-logo {
+    display: none;
+  }
+
+  /* Tambahkan gaya CSS untuk tampilan hamburger menu */
+}
