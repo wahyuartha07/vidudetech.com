@@ -75,7 +75,7 @@
 
   <!-- Keunggulan Start -->
   <article class="container-keunggulan">
-    <div class="keunggulan-container" id="keunggulan">
+    <section class="keunggulan-container" id="keunggulan">
       <h2>Alasan Memilih Kami?</h2>
       <div class="isi-unggul">
         <div class="border">
@@ -91,29 +91,55 @@
           <p>Relasi Luas</p>
         </div>
       </div>
-    </div>
+    </section>
   </article>
   <!-- Keunggulan End -->
 
   <!-- Footer Start -->
-  <footer>
-    <div class="footer-container">
-      <div class="bio">
-        <h2>VIDEDUTECH</h2>
-        <p>
-          Follow Sosial Media Kami dibawah ini
-        </p>
+    <footer>
+      <div class="footer-container">
+        <div class="bio">
+          <h2>VIDEDUTECH</h2>
+          <p>
+            Created by Wahyu Artha Anugrah | © 2023.
+          </p>
+        </div>
+        <div class="sosmed">
+          <img src="../asset/img/Twitter.png" alt="twt">
+          <img src="../asset/img/Facebook.png" alt="fb" onclick="redirectToFacebook()">
+          <img src="../asset//img/Yt.png" alt="yt" onclick="redirectToYoutube()">
+          <img src="../asset/img/IG.png" alt="ig" onclick="redirectToInstagram()">
+        </div>
       </div>
-      <div class="sosmed">
-        <img src="../asset/img/Twitter.png" alt="twt">
-        <img src="../asset/img/Facebook.png" alt="fb">
-        <img src="../asset//img/Yt.png" alt="yt">
-        <img src="../asset/img/IG.png" alt="ig">
-      </div>
-    </div>
-  </footer>
+    </footer>
   <!-- Footer End -->
-  <script src="../src/js/responsif.js"></script>
 </body>
+<script src="../src/js/responsif.js"></script>
+<script>
+  function redirectToInstagram() {
+    // Gantilah 'USERNAME' dengan username Instagram Anda
+    var instagramUsername = 'whyuanuggrahh';
+
+    // Konstruksi tautan Instagram
+    var instagramLink = 'https://www.instagram.com/whyuanuggrahh/' + instagramUsername;
+
+    // Buka tautan Instagram di jendela baru
+    window.open(instagramLink, '_blank');
+  }
+
+  function redirectToYoutube() {
+    var youtubeUsername = 'Wahyu Artha';
+    var youtubeLink = 'https://youtube.com/@wahyuartha8570?si=oq88MhARQI1ErEwR' + youtubeUsername;
+    window.open(youtubeLink, '_blank');
+  }
+
+  function redirectToFacebook() {
+    var facebookUsername = 'Wahyu Artha Anugrah';
+    var youtubeLink = 'https://www.facebook.com/Angraahh/?viewas=&should_open_composer=false&show_switched_toast=false&show_invite_to_follow=false&show_switched_tooltip=false&show_podcast_settings=false&show_community_review_changes=false&show_community_rollback=false&show_follower_visibility_disclosure=false&bypass_exit_warning=true' + facebookUsername;
+    window.open(youtubeLink, '_blank');
+  }
+
+  
+</script>
 
 </html>

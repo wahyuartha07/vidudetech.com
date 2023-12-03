@@ -11,7 +11,7 @@
 
 *,
 html {
-  transition: all 0.4 s ease;
+  transition: all 0.4s ease;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -303,9 +303,10 @@ body {
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 45%;
-  height: 30%;
+  height: 35%;
   margin-top: 1rem;
   background-color: var(--Bg);
+  border-radius: 5px;
   padding-bottom: 13.8rem;
   border: 1px solid #d2cfcf;
   cursor: pointer;
@@ -378,11 +379,12 @@ img {
 
 .footer-container p {
   margin-top: -2rem;
-  padding: 2rem 7%;
+  padding: 2rem 1px;
   max-width: 48rem;
-  font-size: 18px;
+  font-size: 14px;
   text-align: center;
   color: var(--Bg);
+  font-family: "poppins", sans-serif;
 }
 
 .footer-container .sosmed {
@@ -395,6 +397,7 @@ img {
 .footer-container .sosmed img {
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .footer-container .sosmed img:hover {

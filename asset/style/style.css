@@ -282,8 +282,8 @@ hr{
 
 /* keunggulan start */
 .container-keunggulan {
-  padding-top: 1rem;
-  height: 80vh;
+  padding-top: 4rem;
+  height: 90vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -369,11 +369,12 @@ hr{
 
 .footer-container p {
   margin-top: -2rem;
-  padding: 1rem 7%;
+  padding: 2rem 1px;
   max-width: 48rem;
-  font-size: 18px;
+  font-size: 14px;
   text-align: center;
   color: var(--Bg);
+  font-family: "poppins", sans-serif;
 }
 
 .footer-container .sosmed {
@@ -386,6 +387,7 @@ hr{
 .footer-container .sosmed img {
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .footer-container .sosmed img:hover {

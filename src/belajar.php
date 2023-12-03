@@ -112,7 +112,7 @@ if (isset($_SESSION['name'])) {
             <div class="bio">
                 <h2>VIDEDUTECH</h2>
                 <p>
-                    Follow Sosial Media Kami dibawah ini
+                Created by Wahyu Artha Anugrah | © 2023.
                 </p>
             </div>
             <div class="sosmed">
