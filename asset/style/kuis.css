@@ -181,10 +181,10 @@ label.radio input {
 }
 
 label.radio span {
-  padding: 4px 0px;
-  border: 1px solid red;
+  padding: 4px 20px;
+  border: 1px solid var(--Bt);
   display: inline-block;
-  color: red;
+  color: var(--Bl);
   width: 100px;
   text-align: center;
   border-radius: 3px;
@@ -11457,7 +11457,7 @@ a.text-warning:hover {
 }
 
 .text-danger {
-  color: #dc3545 !important
+  color: var(--bt) !important
 }
 
 a.text-danger:focus,

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 
 <head>
@@ -45,28 +45,28 @@
                         <div class="border">
                             <div class="question bg-white p-3 border-bottom">
                                 <div class="d-flex flex-row justify-content-between align-items-center mcq">
-                                    <h4>Quiz Bab 1</h4><span>(5 of 20)</span>
+                                    <h4>Quiz Bab 1</h4><span>(1 of 5)</span>
                                 </div>
                             </div>
                             <div class="question bg-white p-3 border-bottom">
                                 <div class="d-flex flex-row align-items-center question-title">
-                                    <h3 class="text-danger">Q.</h3>
-                                    <h5 class="mt-1 ml-2">Which of the following country has largest population?</h5>
+                                    <h3 class="text-danger">1.</h3>
+                                    <h5 class="mt-1 ml-2">question</h5>
                                 </div>
                                 <div class="ans ml-2">
-                                    <label class="radio"> <input type="radio" name="brazil" value="brazil"> <span>Brazil</span>
+                                    <label class="radio"> <input type="radio" name="A" value="A"> <span>A</span>
                                     </label>
                                 </div>
                                 <div class="ans ml-2">
-                                    <label class="radio"> <input type="radio" name="Germany" value="Germany"> <span>Germany</span>
+                                    <label class="radio"> <input type="radio" name="B" value="B"> <span>B</span>
                                     </label>
                                 </div>
                                 <div class="ans ml-2">
-                                    <label class="radio"> <input type="radio" name="Indonesia" value="Indonesia"> <span>Indonesia</span>
+                                    <label class="radio"> <input type="radio" name="C" value="C"> <span>C</span>
                                     </label>
                                 </div>
                                 <div class="ans ml-2">
-                                    <label class="radio"> <input type="radio" name="Russia" value="Russia"> <span>Russia</span>
+                                    <label class="radio"> <input type="radio" name="D" value="D"> <span>D</span>
                                     </label>
                                 </div>
                             </div>
