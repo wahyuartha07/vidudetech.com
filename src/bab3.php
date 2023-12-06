@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,7 +53,7 @@
             <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFxZxT3eS0&#x2F;view?utm_content=DAFxZxT3eS0&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"></a>
         </section>
         <section class="button-kuis">
-                <button class="kuis" onclick="window.location.href='kuis.php'" id="kuis">Kuis</button>
+                <button class="kuis" onclick="window.location.href='kuis3.php'" id="kuis">Kuis</button>
         </section>
     </article>
     <!-- Belajar end -->

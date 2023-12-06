@@ -12,6 +12,7 @@ if (isset($_SESSION['name'])) {
 ?>
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,10 +47,7 @@ if (isset($_SESSION['name'])) {
                     <i class="fa fa-bars"></i>
                 </a>
                 <!-- Navbar Extra Start -->
-                <button class="masuk" id="msk" onclick="window.location.href='skor.php'">Selesai</button>
-                <!-- Tambahkan ini di bagian body sebelum script JavaScript -->
-
-
+                <button class="masuk" id="msk" onclick="return logout()">Selesai</button>
                 <!-- Navbar Extra End -->
             </nav>
         </section>
@@ -57,11 +55,6 @@ if (isset($_SESSION['name'])) {
     <!-- Navbar End -->
     <article>
         <section class="container mt-5">
-            <!-- Perbarui elemen timer HTML -->
-            <div id="time-left" class="timer">
-                <p id="demo" class="demo"></p>
-            </div>
-
             <div class="d-flex justify-content-center row">
                 <div class="col-md-10 col-lg-10">
                     <div class="border">
@@ -73,7 +66,7 @@ if (isset($_SESSION['name'])) {
                         <div class="question bg-white p-3 border-bottom">
                             <?php
                             include('php/koneksi.php');
-                            $query = mysqli_query($koneksi, 'select * from quiz');
+                            $query = mysqli_query($koneksi, 'select * from quiz2');
                             $row = mysqli_fetch_array($query);
                             ?>
                             <div class="d-flex flex-row align-items-center question-title">
@@ -123,7 +116,7 @@ if (isset($_SESSION['name'])) {
     </script>
 
 
-    <!-- next button -->
+    <!-- Your HTML structure -->
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
@@ -182,51 +175,6 @@ if (isset($_SESSION['name'])) {
                 }
             });
         });
-    </script>
-
-    <!-- timer waktu -->
-    <script>
-        $(document).ready(function() {
-            // ...
-
-            // Event handler for the "Next" button
-            $('#next').on('click', function() {
-                // ...
-
-                // Continue to the next question
-                currentQuestionId++;
-                loadQuestion(currentQuestionId);
-            });
-
-            // Event handler for the "Previous" button (if needed)
-            $('#previous').on('click', function() {
-                if (currentQuestionId > 1) {
-                    currentQuestionId--;
-                    loadQuestion(currentQuestionId);
-                }
-            });
-
-            // ...
-
-            // Update the count down every 1 second
-            var x = setInterval(function() {
-                // ...
-
-                // Output the result in an element with id="time-left"
-                document.getElementById("time-left").innerHTML = days + "d " + hours + "h " +
-                    minutes + "m " + seconds + "s ";
-
-                // If the count down is over, write some text 
-                if (distance < 0) {
-                    clearInterval(x);
-                    document.getElementById("time-left").innerHTML = "EXPIRED";
-                    // Optionally, you can redirect to the score page here
-                    // window.location.href = 'skor.php?score=' + userScore;
-                }
-            }, 1000);
-        });
-    </script>
-
     </script>
 
 </body>
