@@ -111,26 +111,41 @@ if (isset($_SESSION['name'])) {
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="inputLocation">Location</label>
-                                    <input class="form-control" id="inputLocation" type="text" placeholder="Enter your location" value="">
+                                    <label class="small mb-1" for="inputLocation">Pos Code</label>
+                                    <input class="form-control" id="inputLocation" type="text" placeholder="Enter your Pos Code" value="">
                                 </div>
                             </div>
 
                             <div class="mb-3">
+                                <?php
+                                include('php/koneksi.php');
+                                $query = mysqli_query($koneksi, 'SELECT * FROM `users`');
+                                $row = mysqli_fetch_array($query);
+                                ?>
                                 <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                                <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com">
+                                <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="<?php echo $row['email']; ?>">
                             </div>
 
                             <div class="row gx-3 mb-3">
 
                                 <div class="col-md-6">
+                                    <?php
+                                    include('php/koneksi.php');
+                                    $query = mysqli_query($koneksi, 'SELECT * FROM `users`');
+                                    $row = mysqli_fetch_array($query);
+                                    ?>
                                     <label class="small mb-1" for="inputPhone">Phone number</label>
-                                    <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="+62 ">
+                                    <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="<?php echo $row['no_handphone']; ?> ">
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="inputBirthday">Birthday</label>
-                                    <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="">
+                                    <?php
+                                    include('php/koneksi.php');
+                                    $query = mysqli_query($koneksi, 'SELECT * FROM `users`');
+                                    $row = mysqli_fetch_array($query);
+                                    ?>
+                                    <label class="small mb-1" for="inputBirthday">Address</label>
+                                    <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="<?php echo $row['address']; ?>" value="">
                                 </div>
                             </div>
 

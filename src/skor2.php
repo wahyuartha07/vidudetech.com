@@ -84,7 +84,7 @@ if (isset($_SESSION['name'])) {
                     <tr>
                         <th scope="row">Wahyu Artha</th>
                         <td>1</td>
-                        <td>90</td>
+                        <td>80</td>
                         <td>Baik</td>
                     </tr>
                     <tr>
@@ -94,7 +94,7 @@ if (isset($_SESSION['name'])) {
                         <td>Memuaskan</td>
                     </tr>
                     <tr>
-                        <th scope="row">Wahyu Artha</th>
+                        <th scope="row"></th>
                         <td>3</td>
                         <td></td>
                         <td></td>

@@ -88,13 +88,13 @@ if (isset($_SESSION['name'])) {
                         <td>Baik</td>
                     </tr>
                     <tr>
-                        <th scope="row">Wahyu Artha</th>
+                        <th scope="row"></th>
                         <td>2</td>
                         <td></td>
                         <td></td>
                     </tr>
                     <tr>
-                        <th scope="row">Wahyu Artha</th>
+                        <th scope="row"></th>
                         <td>3</td>
                         <td></td>
                         <td></td>
