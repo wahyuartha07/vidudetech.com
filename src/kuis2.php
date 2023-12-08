@@ -47,7 +47,7 @@ if (isset($_SESSION['name'])) {
                     <i class="fa fa-bars"></i>
                 </a>
                 <!-- Navbar Extra Start -->
-                <button class="masuk" id="msk" onclick="return logout()">Selesai</button>
+                <button class="masuk" id="msk" onclick="window.location.href='skor2.php'">Selesai</button>
                 <!-- Navbar Extra End -->
             </nav>
         </section>
@@ -60,7 +60,7 @@ if (isset($_SESSION['name'])) {
                     <div class="border">
                         <div class="question bg-white p-3 border-bottom">
                             <div class="d-flex flex-row justify-content-between align-items-center mcq">
-                                <h4>Quiz Bab 1</h4><span>(1 of 5)</span>
+                                <h4>Quiz Bab 2</h4><span>(1 of 5)</span>
                             </div>
                         </div>
                         <div class="question bg-white p-3 border-bottom">

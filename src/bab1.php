@@ -32,7 +32,7 @@
                     <i class="fa fa-bars"></i>
                 </a>
                 <!-- Navbar Extra Start -->
-                <button class="masuk" id="msk" onclick="return logout()">Selesai</button>
+                <button class="masuk" id="msk" onclick="window.location.href='belajar.php#coourse'">Bab Selanjutnya</button>
                 <!-- Navbar Extra End -->
             </nav>
         </section>

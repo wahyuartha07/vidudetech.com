@@ -1,63 +1,128 @@
+:root {
+  --Primary: #213555;
+  --secondary: #DCCA81;
+  --Bt: #4F709C;
+  --Nav: #f2e8e8;
+  --Bg: #ffffff;
+  --Bl: #000000;
+  --foot: #8C8C8C;
+}
+
+body {
+  background-color: var(--Bg);
+}
+
+.btn-custom {
+  background-color: var(--Bt);
+}
+
+.btn-custom:hover {
+  background-color: var(--Bg);
+  color: var(--secondary) !important;
+}
+
+.btn-nav:hover {
+  color: var(--secondary) !important;
+}
+
+/* Navbar start */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 10px 10%; */
+  background-color: rgb(33, 53, 85);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.container {
+  display: block;
+  width: 100%;
+  margin: 15rem auto 0;
+}
+
+.table {
+  margin: 15rem 5rem 0;
+  width: 90%;
+  font-family: "Montserrat", sans-serif;
+}
+
+.judul {
+  justify-content: center;
+  margin: 2rem;
+}
+
+.table h1 {
+  width: 100%;
+  font-size: 35px;
+  text-align: center;
+  font-weight: 700;
+  color: var(--Primary) ;
+}
+
 #pilih {
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    font-size: 36px;
-    font-family: "Oswald", sans-serif;
-    font-weight: 600;
-    text-align: center;
-    color: #212529;
-  }
-  
-  .dark-mode #pilih {
-    color: #c7c7c7;
-  }
-  
-  #atas {
-    margin-bottom: 5rem;
-  }
-  
-  body {
-    background-color: #f1f1f1;
-  }
-  
-  /* Tabel Skor */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  table thead {
-    background-color: #f9f9f9;
-  }
-  
-  table th,
-  table td {
-    padding: 10px;
-    text-align: left;
-  }
-  
-  table th {
-    font-weight: bold;
-    color: #333;
-  }
-  
-  table tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  span {
-    margin-top: 20px;
-    margin-left: 20px;
-    cursor: pointer;
-    color: #333;
-  }
-  
-  main {
-    margin: 0 auto;
-    max-width: 800px;
-    padding: 20px;
-    background-color: #fff;
-  }
-  
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-size: 36px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  color: #212529;
+}
+
+.dark-mode #pilih {
+  color: #c7c7c7;
+}
+
+#atas {
+  margin-bottom: 5rem;
+}
+
+body {
+  background-color: #f1f1f1;
+}
+
+/* Tabel Skor */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table thead {
+  background-color: #f9f9f9;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+}
+
+table th {
+  font-weight: bold;
+  color: #333;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+span {
+  margin-top: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #fff;
+}
