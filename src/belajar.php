@@ -195,7 +195,7 @@ if (isset($_SESSION['name'])) {
                 <!-- You can delete the links only if you've purchased the pro version. -->
                 <!-- Licensing information: https://bootstrapmade.com/license/ -->
                 <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-                Designed by <a href="https://bootstrapmade.com/">Wahyu Artha Anugrah</a>
+                Designed by <a href="https://wahyuartha07.github.io/WahyuArtha/" target="_blank">Wahyu Artha Anugrah</a>
             </div>
         </div>
 

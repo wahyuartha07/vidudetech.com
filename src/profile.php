@@ -9,6 +9,7 @@ if (isset($_SESSION['name'])) {
         window.location.href = "sign-in.php";
     </script>';
 }
+
 ?>
 
 
@@ -36,7 +37,7 @@ if (isset($_SESSION['name'])) {
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                     <a class="a-nav" href="./belajar.php#about">About</a>
                     <a class="a-nav" href="./belajar.php#container-about"">Belajar</a>
-                    <a class="a-nav" href="#" onclick="window.location.href='profile.php'">Profile</a>
+                    <a class=" a-nav" href="#" onclick="window.location.href='profile.php'">Profile</a>
                 </div>
                 <!-- Side navbar -->
                 <!-- Use any element to open the sidenav -->
@@ -78,10 +79,15 @@ if (isset($_SESSION['name'])) {
                     <div class="card-header">Account Details</div>
                     <div class="card-body">
                         <form>
-
                             <div class="mb-3">
+                                <?php
+                                include('php/koneksi.php');
+                                $query = mysqli_query($koneksi, 'SELECT * FROM `users`');
+                                $row = mysqli_fetch_array($query);
+                                ?>
                                 <label class="small mb-1" for="inputUsername">Username (how your name will appear to other users on the site)</label>
-                                <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="username">
+                                <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="<?php echo $row['nama']; ?>">
+
                             </div>
 
                             <div class="row gx-3 mb-3">

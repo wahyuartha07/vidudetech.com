@@ -67,7 +67,13 @@ if (isset($_SESSION['name'])) {
                     <div class="border">
                         <div class="question bg-white p-3 border-bottom">
                             <div class="d-flex flex-row justify-content-between align-items-center mcq">
-                                <h4>Quiz Bab 1</h4><span>(1 of 5)</span>
+                                <?php
+                                include('php/koneksi.php');
+                                $query = mysqli_query($koneksi, 'select * from quiz');
+                                $totalQuestions = mysqli_num_rows($query);
+                                $row = mysqli_fetch_array($query);
+                                ?>
+                                <h4>Quiz Bab 1</h4><span>(<?php echo $row['id']; ?> of <?php echo $totalQuestions; ?>)</span>
                             </div>
                         </div>
                         <div class="question bg-white p-3 border-bottom">
@@ -93,7 +99,13 @@ if (isset($_SESSION['name'])) {
                                 <input type="radio" name="answer" value="D" data-correct="<?php echo $correct_option; ?>"> <span> D. <?php echo $row['option4'] ?></span>
                             </div>
                         </div>
-                        <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white"><button class="btn btn-primary d-flex align-items-center btn-danger" type="button" id="previous"><i class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;previous</button><button class="btn btn-primary border-success align-items-center btn-success" type="button" id="next">Next<i class="fa fa-angle-right ml-2"></i></button></div>
+                        <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
+                            <button class="btn btn-primary d-flex align-items-center btn-danger" type="button" id="previous">
+                                <i class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;previous
+                            </button>
+                            <button class="btn btn-primary border-success align-items-center btn-success" type="button" id="next">Next<i class="fa fa-angle-right ml-2"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -127,104 +139,67 @@ if (isset($_SESSION['name'])) {
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
-        $(document).ready(function() {
-            var currentQuestionId = <?php echo $row['id']; ?>;
-            var userScore = 0;
+         $(document).ready(function() {
+        var currentQuestionId = <?php echo $row['id']; ?>;
+        var userScore = 0;
+        var totalQuestions = <?php echo $totalQuestions; ?>;
 
-            function loadQuestion(questionId) {
-                $.ajax({
-                    url: 'php/load_kuis.php',
-                    method: 'GET',
-                    data: {
-                        id: questionId
-                    },
-                    success: function(response) {
-                        var data = JSON.parse(response);
+        function loadQuestion(questionId) {
+            $.ajax({
+                url: 'php/load_kuis.php',
+                method: 'GET',
+                data: {
+                    id: questionId
+                },
+                success: function(response) {
+                    var data = JSON.parse(response);
 
-                        // Update the HTML with the new question data
-                        $('#id').text(data.id + '.');
-                        $('#question').text(data.question_text);
+                    // Update the HTML with the new question data
+                    $('#id').text(data.id + '.');
+                    $('#question').text(data.question_text);
 
-                        // Uncheck all radio buttons
-                        $('input[name="answer"]').prop('checked', false);
+                    // Uncheck all radio buttons
+                    $('input[name="answer"]').prop('checked', false);
 
-                        // Set the values for radio buttons
-                        $('input[name="answer"][value="A"]').next().text('A. ' + data.option1).data('correct', data.correct_answer);
-                        $('input[name="answer"][value="B"]').next().text('B. ' + data.option2).data('correct', data.correct_answer);
-                        $('input[name="answer"][value="C"]').next().text('C. ' + data.option3).data('correct', data.correct_answer);
-                        $('input[name="answer"][value="D"]').next().text('D. ' + data.option4).data('correct', data.correct_answer);
-                    }
-                });
+                    // Set the values for radio buttons
+                    $('input[name="answer"][value="A"]').next().text('A. ' + data.option1).data('correct', data.correct_answer);
+                    $('input[name="answer"][value="B"]').next().text('B. ' + data.option2).data('correct', data.correct_answer);
+                    $('input[name="answer"][value="C"]').next().text('C. ' + data.option3).data('correct', data.correct_answer);
+                    $('input[name="answer"][value="D"]').next().text('D. ' + data.option4).data('correct', data.correct_answer);
+
+                    // Update the question count
+                    $('#mcq-count').text('(' + questionId + ' of ' + totalQuestions + ')');
+                }
+            });
+        }
+
+        // Event handler for the "Next" button
+        $('#next').on('click', function() {
+            // Get the selected answer
+            var selectedAnswer = $('input[name="answer"]:checked').val();
+            // Get the correct answer
+            var correctAnswer = $('input[name="answer"]:checked').data('correct');
+
+            // Check if the selected answer is correct
+            if (selectedAnswer === correctAnswer) {
+                userScore++;
             }
 
-            // Event handler for the "Next" button
-            $('#next').on('click', function() {
-                // Get the selected answer
-                var selectedAnswer = $('input[name="answer"]:checked').val();
-                // Get the correct answer
-                var correctAnswer = $('input[name="answer"]:checked').data('correct');
-
-                // Check if the selected answer is correct
-                if (selectedAnswer === correctAnswer) {
-                    userScore++;
-                }
-
-                // Continue to the next question
+            // Continue to the next question
+            if (currentQuestionId < totalQuestions) {
                 currentQuestionId++;
                 loadQuestion(currentQuestionId);
-            });
-
-            // Event handler for the "Previous" button (if needed)
-            $('#previous').on('click', function() {
-                if (currentQuestionId > 1) {
-                    currentQuestionId--;
-                    loadQuestion(currentQuestionId);
-                }
-            });
+            }
         });
-    </script>
 
-    <!-- timer waktu -->
-    <script>
-        $(document).ready(function() {
-            // ...
-
-            // Event handler for the "Next" button
-            $('#next').on('click', function() {
-                // ...
-
-                // Continue to the next question
-                currentQuestionId++;
+        // Event handler for the "Previous" button (if needed)
+        $('#previous').on('click', function() {
+            if (currentQuestionId > 1) {
+                currentQuestionId--;
                 loadQuestion(currentQuestionId);
-            });
-
-            // Event handler for the "Previous" button (if needed)
-            $('#previous').on('click', function() {
-                if (currentQuestionId > 1) {
-                    currentQuestionId--;
-                    loadQuestion(currentQuestionId);
-                }
-            });
-
-            // ...
-
-            // Update the count down every 1 second
-            var x = setInterval(function() {
-                // ...
-
-                // Output the result in an element with id="time-left"
-                document.getElementById("time-left").innerHTML = days + "d " + hours + "h " +
-                    minutes + "m " + seconds + "s ";
-
-                // If the count down is over, write some text 
-                if (distance < 0) {
-                    clearInterval(x);
-                    document.getElementById("time-left").innerHTML = "EXPIRED";
-                    // Optionally, you can redirect to the score page here
-                    // window.location.href = 'skor.php?score=' + userScore;
-                }
-            }, 1000);
+            }
         });
+    }); 
     </script>
 
     </script>
